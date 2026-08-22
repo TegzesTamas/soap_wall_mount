@@ -1,5 +1,11 @@
 include <params.scad>
 
+bowl_in_length = soap_length * (1+tolerance);
+bowl_in_width = soap_width * (1+tolerance);
+
+bowl_out_length = bowl_in_length + 2*bowl_wall_thickness;
+bowl_out_width = bowl_in_width + 2*bowl_wall_thickness;
+
 bowl_shelf_length = bowl_in_length - 2*bowl_shelf_thickness;
 bowl_shelf_width = bowl_in_width - 2*bowl_shelf_thickness;
 bowl_shelf_corner_radius = bowl_in_corner_radius - bowl_shelf_thickness;
