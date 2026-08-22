@@ -12,6 +12,7 @@ module cube_on_z0 (width, length, height) {
 tolerance = 0.03;
 
 anchor_small_diam   = 10;
+anchor_small_height = 3;
 anchor_big_diam     = 20;
 anchor_big_height   = 5;
 anchor_hole_diam    = 4.5;
@@ -34,8 +35,9 @@ bowl_shelf_thickness = 2;
 rail_wall_thickness = 1.5;
 rail_length = 40;
 
-
 mesh_line_size = 2;
 mesh_thickness = 2;
 mesh_hole_size = 4.4;
 mesh_hole_margin = 1;
+
+assert(anchor_small_height > rail_wall_thickness*(1+tolerance), "anchor_small_height should be larger to make sure rail has space");
