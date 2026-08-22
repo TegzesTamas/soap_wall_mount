@@ -29,7 +29,7 @@ module param_cyl_hull(length, width, corner_radius, height) {
 }
 
 anchor_rail_tolerance = 0.03;
-bowl_insert_tolerance = 0.005;
+bowl_insert_tolerance = 0.01;
 
 anchor_small_diam   = 10;
 anchor_small_height = 3;
@@ -47,13 +47,13 @@ bowl_in_corner_radius = bowl_out_corner_radius-bowl_wall_thickness;
 soap_length = 105;
 soap_width = 60;
 
-bowl_height = 30;
+bowl_height = 22;
 
 mesh_cutout_height = 13;
 bowl_shelf_thickness = 2;
 
 rail_wall_thickness = 1.5;
-rail_length = 40;
+rail_length = 32;
 
 mesh_line_size = 2;
 mesh_thickness = 2;
