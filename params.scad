@@ -37,10 +37,6 @@ bowl_height = 20;
 
 mesh_cutout_height = 13;
 bowl_shelf_thickness = 2;
-bowl_shelf_length = bowl_in_length - 2*bowl_shelf_thickness;
-bowl_shelf_width = bowl_in_width - 2*bowl_shelf_thickness;
-bowl_shelf_corner_radius = bowl_in_corner_radius - bowl_shelf_thickness;
-assert(bowl_shelf_corner_radius > 0, "Shelf corner radius too small");
 
 rail_wall_thickness = 1;
 rail_length = 40;
