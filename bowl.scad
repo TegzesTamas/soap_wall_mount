@@ -1,34 +1,15 @@
 include <params.scad>
 
-bowl_in_length = soap_length * (1+tolerance);
-bowl_in_width = soap_width * (1+tolerance);
+bowl_in_length = soap_length * (1+bowl_insert_tolerance);
+bowl_in_width  = soap_width  * (1+bowl_insert_tolerance);
 
 bowl_out_length = bowl_in_length + 2*bowl_wall_thickness;
-bowl_out_width = bowl_in_width + 2*bowl_wall_thickness;
+bowl_out_width  = bowl_in_width  + 2*bowl_wall_thickness;
 
 bowl_shelf_length = bowl_in_length - 2*bowl_shelf_thickness;
-bowl_shelf_width = bowl_in_width - 2*bowl_shelf_thickness;
+bowl_shelf_width  = bowl_in_width  - 2*bowl_shelf_thickness;
 bowl_shelf_corner_radius = bowl_in_corner_radius - bowl_shelf_thickness;
 assert(bowl_shelf_corner_radius > 0, "Shelf corner radius too small");
-
-module param_cyl_hull(length, width, corner_radius, height) {
-    center_length = length-2*corner_radius;
-    center_width = width-2*corner_radius;
-    hull() {
-        translate([-center_length/2, -center_width/2, 0]) {
-            cylinder(r=corner_radius, h=height, center=false);
-        }
-        translate([-center_length/2, +center_width/2, 0]) {
-            cylinder(r=corner_radius, h=height, center=false);
-        }
-        translate([+center_length/2, +center_width/2, 0]) {
-            cylinder(r=corner_radius, h=height, center=false);
-        }
-        translate([+center_length/2, -center_width/2, 0]) {
-            cylinder(r=corner_radius, h=height, center=false);
-        }
-    }
-}
 
 module param_hull(length, width, corner_radius, height) {
     center_length = length-2*corner_radius;
@@ -64,12 +45,12 @@ module bowl_body() {
     }
 }
 
-rail_in_width = anchor_big_diam*(1+tolerance);
-rail_in_height = anchor_big_height*(1+tolerance);
+rail_in_width = anchor_big_diam*(1+anchor_rail_tolerance);
+rail_in_height = anchor_big_height*(1+anchor_rail_tolerance);
 rail_out_width = rail_in_width+2*rail_wall_thickness;
 rail_out_height = rail_in_height+2*rail_wall_thickness;
 
-rail_cutout_width = anchor_small_diam+(1+tolerance);
+rail_cutout_width = anchor_small_diam+(1+anchor_rail_tolerance);
 
 module cyl_cube(width, length, height) {
     hull() {
@@ -114,3 +95,7 @@ union(){
         }
     }
 }
+
+echo(str("bowl_in_length        = ", bowl_in_length));
+echo(str("bowl_in_width         = ", bowl_in_width));
+echo(str("bowl_in_corner_radius = ", bowl_in_corner_radius));

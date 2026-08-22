@@ -9,7 +9,27 @@ module cube_on_z0 (width, length, height) {
     }
 }
 
-tolerance = 0.03;
+module param_cyl_hull(length, width, corner_radius, height) {
+    center_length = length-2*corner_radius;
+    center_width = width-2*corner_radius;
+    hull() {
+        translate([-center_length/2, -center_width/2, 0]) {
+            cylinder(r=corner_radius, h=height, center=false);
+        }
+        translate([-center_length/2, +center_width/2, 0]) {
+            cylinder(r=corner_radius, h=height, center=false);
+        }
+        translate([+center_length/2, +center_width/2, 0]) {
+            cylinder(r=corner_radius, h=height, center=false);
+        }
+        translate([+center_length/2, -center_width/2, 0]) {
+            cylinder(r=corner_radius, h=height, center=false);
+        }
+    }
+}
+
+anchor_rail_tolerance = 0.03;
+bowl_insert_tolerance = 0.005;
 
 anchor_small_diam   = 10;
 anchor_small_height = 3;
@@ -37,7 +57,7 @@ rail_length = 40;
 
 mesh_line_size = 2;
 mesh_thickness = 2;
-mesh_hole_size = 4.4;
+mesh_hole_size = 5.1;
 mesh_hole_margin = 1;
 
-assert(anchor_small_height > rail_wall_thickness*(1+tolerance), "anchor_small_height should be larger to make sure rail has space");
+assert(anchor_small_height > rail_wall_thickness*(1+anchor_rail_tolerance), "anchor_small_height should be larger to make sure rail has space");

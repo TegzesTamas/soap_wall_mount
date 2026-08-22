@@ -1,13 +1,11 @@
 include <params.scad>
 
-tol_anchor_small_diam   = anchor_small_diam*(1-tolerance);
-tol_anchor_small_height = anchor_small_height*(1+tolerance);
-tol_anchor_big_diam     = anchor_big_diam*(1-tolerance);
-tol_anchor_big_height   = anchor_big_height*(1-tolerance);
+tol_anchor_small_diam   = anchor_small_diam  *(1-anchor_rail_tolerance);
+tol_anchor_small_height = anchor_small_height*(1+anchor_rail_tolerance);
+tol_anchor_big_diam     = anchor_big_diam    *(1-anchor_rail_tolerance);
+tol_anchor_big_height   = anchor_big_height  *(1-anchor_rail_tolerance);
 
 anchor_total_height = tol_anchor_small_height + tol_anchor_big_height;
-
-
 
 module anchor() {
     difference() {
