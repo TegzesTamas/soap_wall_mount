@@ -15,7 +15,7 @@ anchor_small_diam   = 10;
 anchor_small_height = 5;
 anchor_big_diam     = 20;
 anchor_big_height   = 5;
-anchor_hole_diam    = 4;
+anchor_hole_diam    = 4.5;
 
 countersink_big_diam = 8.5;
 countersink_height = 4.5;
