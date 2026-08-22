@@ -44,3 +44,9 @@ assert(bowl_shelf_corner_radius > 0, "Shelf corner radius too small");
 
 rail_wall_thickness = 1;
 rail_length = 40;
+
+
+mesh_line_size = 2;
+mesh_thickness = 2;
+mesh_hole_size = 4.4;
+mesh_hole_margin = 1;
