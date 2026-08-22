@@ -12,7 +12,6 @@ module cube_on_z0 (width, length, height) {
 tolerance = 0.03;
 
 anchor_small_diam   = 10;
-anchor_small_height = 5;
 anchor_big_diam     = 20;
 anchor_big_height   = 5;
 anchor_hole_diam    = 4.5;
@@ -27,12 +26,12 @@ bowl_in_corner_radius = bowl_out_corner_radius-bowl_wall_thickness;
 soap_length = 105;
 soap_width = 60;
 
-bowl_height = 20;
+bowl_height = 30;
 
 mesh_cutout_height = 13;
 bowl_shelf_thickness = 2;
 
-rail_wall_thickness = 1;
+rail_wall_thickness = 1.5;
 rail_length = 40;
 
 

@@ -1,7 +1,7 @@
 include <params.scad>
 
 tol_anchor_small_diam   = anchor_small_diam*(1-tolerance);
-tol_anchor_small_height = anchor_small_height*(1+tolerance);
+tol_anchor_small_height = rail_wall_thickness*(1+tolerance);
 tol_anchor_big_diam     = anchor_big_diam*(1-tolerance);
 tol_anchor_big_height   = anchor_big_height*(1-tolerance);
 

@@ -81,7 +81,7 @@ module cyl_cube(width, length, height) {
 }
 
 module rail() {
-    translate([0, -rail_out_height+rail_wall_thickness, rail_length]) {
+    translate([0, -rail_out_height+bowl_wall_thickness, rail_length]) {
         rotate([-90, 0, 0]) {
             difference() {
                 cyl_cube(rail_out_width, rail_length, rail_out_height);
